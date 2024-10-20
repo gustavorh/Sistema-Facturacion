@@ -9,6 +9,10 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -21,16 +25,24 @@ public class Cliente implements Serializable {
     private Long id;
 
     @Column(nullable = false, length = 50)
+    @NotBlank
+    @Size(min = 3, max = 50)
     private String nombre;
 
     @Column(nullable = false, length = 50)
+    @NotBlank
+    @Size(min = 3, max = 50)
     private String apellido;
 
     @Column(nullable = false, length = 50)
+    @NotBlank
+    @Size(min = 6, max = 50) // a@a.cl
+    @Email
     private String email;
 
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
+    @NotNull
     private LocalDateTime fechaCreacion;
 
     public Long getId() {
