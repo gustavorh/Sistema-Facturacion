@@ -27,19 +27,22 @@
         <div class="form-group">
             <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
             <div class="col-sm-6">
-                <input id="nombre" type="text" th:field="*{nombre}" class="form-control" />
+                <input id="nombre" type="text" th:field="*{nombre}" th:errorclass="'form-control alert alert-danger'" class="form-control" />
+                <small th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" class="form-text text-danger"></small>
             </div>
         </div>
         <div class="form-group">
             <label for="apellido" class="col-sm-2 col-form-label">Apellido</label>
             <div class="col-sm-6">
-                <input id="apellido" type="text" th:field="*{apellido}" class="form-control" />
+                <input id="apellido" type="text" th:field="*{apellido}" th:errorclass="'form-control alert alert-danger'" class="form-control" />
+                <small th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}" class="form-text text-danger"></small>
             </div>
         </div>
         <div class="form-group">
             <label for="email" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-6">
-                <input id="email" type="text" th:field="*{email}" class="form-control" />
+                <input id="email" type="text" th:field="*{email}" th:errorclass="'form-control alert alert-danger'" class="form-control" />
+                <small th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="form-text text-danger"></small>
             </div>
         </div>
         <div class="form-group">
