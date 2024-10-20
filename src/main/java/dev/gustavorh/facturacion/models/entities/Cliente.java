@@ -42,7 +42,6 @@ public class Cliente implements Serializable {
 
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    @NotNull
     private LocalDateTime fechaCreacion;
 
     public Long getId() {
